@@ -17,37 +17,36 @@ let precip;
 let precipT;
 let c1, c2, c3, c4, c5, c6, c7;
 
-
 const places = [
   { 'name': 'boston', 'lat': 42.3604, 'lon': -71.0579667 },
-  { 'name': 'antarctica', 'lat': 82.8628, 'lon': 135.0000 },
-  { 'name': 'austin', 'lat': 30.2672, 'lon': -97.7431 },
-  { 'name': 'brno', 'lat': 49.1951, 'lon': 16.6068 },
-  { 'name': 'capetown', 'lat': -33.9249, 'lon': 18.4241 },
-  { 'name': 'copacabana', 'lat': -22.970722, 'lon': -43.1853 },
-  { 'name': 'haifa', 'lat': 32.7940, 'lon': 32.7940 },
-  { 'name': 'isle of man', 'lat': 54.2361, 'lon': 4.5481 },
-  { 'name': 'istanbul', 'lat': 41.0082, 'lon': 28.9784 },
-  { 'name': 'jakarta', 'lat': - 6.200, 'lon': 106.817 },
-  { 'name': 'kandahar', 'lat': 31.6289, 'lon': 65.7372 },
-  { 'name': 'machu picchu', 'lat': 13.1631, 'lon': -72.5450 },
-  { 'name': 'mount washington', 'lat': 44.2706, 'lon': -71.3033 },
-  { 'name': 'moscow', 'lat': 55.754093, 'lon': 37.620407 },
-  { 'name': 'nairobi', 'lat': -1.2921, 'lon': 36.8219 },
-  { 'name': 'north pole', 'lat': 90.0000, 'lon': 0.0000 },
-  { 'name': 'oslo', 'lat': 59.9139, 'lon': 10.7522 },
-  { 'name': 'paris', 'lat': 48.8566, 'lon': 2.3533 },
-  { 'name': 'riga', 'lat': 59.9496, 'lon': 24.1052 },
-  { 'name': 'sahara desert', 'lat': 23.4126, 'lon': 25.6628 },
-  { 'name': 'standing rock', 'lat': 45.7503, 'lon': -101.2004 },
-  { 'name': 'siberia', 'lat': 45.7503, 'lon': 99.1967 },
-  { 'name': 'svalbard', 'lat': 77.8750, 'lon': 20.9752 },
-  { 'name': 'tierra del fuego', 'lat': 54.000, 'lon': 70.000 },
-  { 'name': 'washington, dc', 'lat': 38.9072, 'lon': -77.0369 },
-  { 'name': 'wellington', 'lat': -41.2865, 'lon': 174.7762 },
-  { 'name': 'xi\'an', 'lat': 34.3416, 'lon': 108.9396 },
-  { 'name': 'yuma', 'lat': 32.6927, 'lon': -114.6277 },
-  { 'name': 'zagazig', 'lat': 30.5765, 'lon': 31.5041 }
+  //{ 'name': 'antarctica', 'lat': 82.8628, 'lon': 135.0000 },
+  //{ 'name': 'austin', 'lat': 30.2672, 'lon': -97.7431 },
+  //{ 'name': 'brno', 'lat': 49.1951, 'lon': 16.6068 },
+  //{ 'name': 'capetown', 'lat': -33.9249, 'lon': 18.4241 },
+  //{ 'name': 'copacabana', 'lat': -22.970722, 'lon': -43.1853 },
+  //{ 'name': 'haifa', 'lat': 32.7940, 'lon': 32.7940 },
+  //{ 'name': 'isle of man', 'lat': 54.2361, 'lon': 4.5481 },
+  //{ 'name': 'istanbul', 'lat': 41.0082, 'lon': 28.9784 },
+  //{ 'name': 'jakarta', 'lat': - 6.200, 'lon': 106.817 },
+  //{ 'name': 'kandahar', 'lat': 31.6289, 'lon': 65.7372 },
+  //{ 'name': 'machu picchu', 'lat': 13.1631, 'lon': -72.5450 },
+  //{ 'name': 'mount washington', 'lat': 44.2706, 'lon': -71.3033 },
+  //{ 'name': 'moscow', 'lat': 55.754093, 'lon': 37.620407 },
+  //{ 'name': 'nairobi', 'lat': -1.2921, 'lon': 36.8219 },
+  //{ 'name': 'north pole', 'lat': 90.0000, 'lon': 0.0000 },
+  //{ 'name': 'oslo', 'lat': 59.9139, 'lon': 10.7522 },
+  //{ 'name': 'paris', 'lat': 48.8566, 'lon': 2.3533 },
+  //{ 'name': 'riga', 'lat': 59.9496, 'lon': 24.1052 },
+  //{ 'name': 'sahara desert', 'lat': 23.4126, 'lon': 25.6628 },
+  //{ 'name': 'standing rock', 'lat': 45.7503, 'lon': -101.2004 },
+  //{ 'name': 'siberia', 'lat': 45.7503, 'lon': 99.1967 },
+  //{ 'name': 'svalbard', 'lat': 77.8750, 'lon': 20.9752 },
+  //{ 'name': 'tierra del fuego', 'lat': 54.000, 'lon': 70.000 },
+  //{ 'name': 'washington, dc', 'lat': 38.9072, 'lon': -77.0369 },
+  //{ 'name': 'wellington', 'lat': -41.2865, 'lon': 174.7762 },
+  //{ 'name': 'xi\'an', 'lat': 34.3416, 'lon': 108.9396 },
+  //{ 'name': 'yuma', 'lat': 32.6927, 'lon': -114.6277 },
+  //{ 'name': 'zagazig', 'lat': 30.5765, 'lon': 31.5041 }
 ];
 let place;
 let placeIndex = 0;
@@ -283,5 +282,6 @@ function setPlace(index) {
   placeIndex = index;
   place = places[placeIndex];
   wt = requestWeather(place.lat, place.lon);
+  //wt = requestWeather(42.3604, -71.0579667);  
 }
   
